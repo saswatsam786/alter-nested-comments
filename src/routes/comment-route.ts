@@ -12,15 +12,15 @@ class CommentRouter {
   }
 
   private configureRoutes(): void {
-    this.router.post("/:postId/comments", verifyToken, CommentController.createComment);
-    this.router.post("/:postId/comments/:commentId/reply", verifyToken, CommentController.replyToComment);
-    this.router.get("/:postId/comments", CommentController.getCommentsForPost);
-    this.router.get(
-      "/:postId/comments/:commentId/expand",
+    this.router.post("/:postId/comments", verifyToken, commentRateLimiter, CommentController.createComment);
+    this.router.post(
+      "/:postId/comments/:commentId/reply",
       verifyToken,
       commentRateLimiter,
-      CommentController.expandParentComments
+      CommentController.replyToComment
     );
+    this.router.get("/:postId/comments", CommentController.getCommentsForPost);
+    this.router.get("/:postId/comments/:commentId/expand", verifyToken, CommentController.expandParentComments);
   }
 
   public getRouter(): Router {

@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "6005:6005"
+    environment:
+      - PORT=6005
+      - MONGO_URL=mongodb+srv://saswatsam:eQkLBndhqjDoViUD@cluster0.h1j2i.mongodb.net/
+      - JWT=project-is-under-development

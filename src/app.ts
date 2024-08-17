@@ -16,7 +16,7 @@ class App {
   private userRoutes_ = new UserRouter();
   private postRoutes_ = new PostRouter();
   private commentRoutes_ = new CommentRouter();
-  private PORT_ = process.env.PORT || 4000;
+  private PORT_ = process.env.PORT || 6005;
   private isProduction = process.env.NODE_ENV === "production";
 
   constructor() {

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { CustomError, createError } from "../utilities/error";
 import { User, IUser } from "../models";
 import { generateToken } from "../utilities/jwt-util";
