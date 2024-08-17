@@ -39,8 +39,8 @@ class App {
 
   private initializeRoutes() {
     this.app_.use("/api/user", this.userRoutes_.getRouter());
-    this.app_.use("/api/post", this.postRoutes_.getRouter());
-    this.app_.use("/api/post", this.commentRoutes_.getRouter());
+    this.app_.use("/api/posts", this.postRoutes_.getRouter());
+    this.app_.use("/api/posts", this.commentRoutes_.getRouter());
   }
 
   public get_app() {
