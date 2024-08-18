@@ -38,7 +38,7 @@ class App {
   }
 
   private initializeRoutes() {
-    this.app_.use("/test", (req, res) => res.send("Hello World!"));
+    this.app_.get("/test", (req, res) => res.send("Hello World!"));
     this.app_.use("/api/user", this.userRoutes_.getRouter());
     this.app_.use("/api/posts", this.postRoutes_.getRouter());
     this.app_.use("/api/posts", this.commentRoutes_.getRouter());
